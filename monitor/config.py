@@ -21,14 +21,41 @@ def load_settings() -> Settings:
     timeout = float(_get_env("REQUEST_TIMEOUT_SECONDS", "10"))
     return Settings(webhook, expected, vhosts_root, min_bytes, timeout)
 
-def load_domains(config_path="configs/domains.yml") -> list[str]:
-    """Carrega domínios do YAML de configuração"""
+def load_domains(config_path="configs/domains.yml") -> list[dict]:
+    """
+    Retorna lista normalizada e sem duplicatas:
+    { "host": str, "skip_ip_check": bool, "expected_ips": set[str] | None }
+    """
     try:
         with open(config_path, "r", encoding="utf-8") as f:
             data = yaml.safe_load(f) or {}
-            return sorted(set(data.get("domains", [])))
     except FileNotFoundError:
         return []
+
+    raw = data.get("domains", [])
+    if not isinstance(raw, list):
+        return []
+
+    by_host = {}  # último wins
+    for item in raw:
+        if isinstance(item, str):
+            host = item.strip().lower()
+            if host:
+                by_host[host] = {"host": host, "skip_ip_check": False, "expected_ips": None}
+        elif isinstance(item, dict):
+            host = str(item.get("host", "")).strip().lower()
+            if not host:
+                continue
+            skip = bool(item.get("skip_ip_check", False))
+            exp = item.get("expected_ips")
+            if isinstance(exp, list):
+                exp = {str(ip).strip() for ip in exp if str(ip).strip()}
+            else:
+                exp = None
+            by_host[host] = {"host": host, "skip_ip_check": skip, "expected_ips": exp}
+    return list(by_host.values())
+
+
 
 def _get_env(name: str, default: str = "") -> str:
     v = os.getenv(name)

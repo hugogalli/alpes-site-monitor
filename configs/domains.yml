@@ -1,3 +1,11 @@
 domains:
-  - example.com
-  - www.cloudflare.com
+  - host: grupocarbel.com.br
+    skip_ip_check: false
+  - host: carbel.com.br
+    skip_ip_check: false
+  - host: carbelbyd.com.br
+    skip_ip_check: false
+  - host: carbelkorea.com.br
+    skip_ip_check: false
+
+## SKIP IP = PARA TESTAR COM DOMINIOS ALEATORIOS O IP NAO BATE COM OS FORNECIDOS
