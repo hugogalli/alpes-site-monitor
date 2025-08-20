@@ -128,7 +128,19 @@ python -m monitor --interval 300
 
 Formato enviado:
 
--- IMAGENS
+<img width="485" height="333" alt="image" src="https://github.com/user-attachments/assets/58e30845-6e3c-4ff9-ae90-b2341ee535b6" />
+
+<img width="530" height="400" alt="image" src="https://github.com/user-attachments/assets/4cd11611-ba4a-4a1c-ae99-581af0142b9b" />
+
+<img width="526" height="404" alt="image" src="https://github.com/user-attachments/assets/32c73371-da14-421c-9334-9bcb00fe251c" />
+
+<img width="528" height="352" alt="image" src="https://github.com/user-attachments/assets/b50735dc-56bf-4c88-8c4e-a7dfa87be1eb" />
+
+<img width="534" height="351" alt="image" src="https://github.com/user-attachments/assets/0118fe94-9bad-44c6-8b6a-79b96ac3970d" />
+
+<img width="537" height="356" alt="image" src="https://github.com/user-attachments/assets/d0de0236-ef28-4472-841c-4bb4d68aeb18" />
+
+<img width="537" height="356" alt="image" src="https://github.com/user-attachments/assets/da489fc8-2a34-4a18-b4fb-419059e49b90" />
 
 ---
 
