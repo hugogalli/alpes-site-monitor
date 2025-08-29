@@ -144,7 +144,7 @@ Formato enviado:
 
 ---
 
-## Respostas às perguntas da etapa
+## Respostas às perguntas comuns
 
 **O domínio está apontando corretamente para nossos servidores?**  
 Sim. Quando o domínio não está atrás da Cloudflare, os registros A e AAAA resolvidos são comparados com os IPs oficiais informados no `.env`:
