@@ -1,4 +1,4 @@
-# Alpes Site Monitor · Etapa 2
+# Monitor de dominios com Alerta no Discord
 
 Solução que verifica periodicamente se os sites estão online e notifica via webhook do Discord no canal `#notificações`.
 A aplicação **envia mensagens quando está OK** e quando encontra **erros**.
